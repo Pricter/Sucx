@@ -1,10 +1,10 @@
-# Limine C Template
+# Sucx
 
-This repository will demonstrate how to set up a basic x86-64 kernel in C using Limine.
-
-It is recommended to cross reference the contents of this repository with [the Limine Bare Bones](https://wiki.osdev.org/Limine_Bare_Bones) OSDev wiki page.
+This project is named after its defining quality. I aim to turn this into atleast a usable os soon.
 
 ## How to use this?
+
+Clone the project using the submodules as they are used for various parts of the kernel
 
 ### Dependencies
 
@@ -25,3 +25,24 @@ Running `make run` will build the kernel and a bootable ISO (equivalent to make 
 Running `make run-hdd` will build the kernel and a raw HDD image (equivalent to make all-hdd) and then run it using `qemu` (if installed).
 
 The `run-uefi` and `run-hdd-uefi` targets are equivalent to their non `-uefi` counterparts except that they boot `qemu` using a UEFI-compatible firmware.
+
+## TODO
+- [ ] Memory management
+- [ ] PIT Timer
+- [ ] Undefined Behaviour Sanitizer
+- [ ] HPET Timer
+- [ ] LAPIC Timer
+- [ ] Scheduler
+- [ ] VFS
+- [ ] PS2 Controller driver
+- [ ] PS2 Keyboard driver
+- [ ] PS2 Mouse driver
+- [ ] Drivers as "modules" interface
+- [ ] Print to /dev/tty instead of framebuffer
+- [ ] tmpfs
+- [ ] Disk driver
+- [ ] Any good file system
+- [ ] Integrate DWARF in stacktrace
+- [ ] USB driver
+- [ ] USB keyboard / mouse
+- [ ] Seperate init phase and later phase
