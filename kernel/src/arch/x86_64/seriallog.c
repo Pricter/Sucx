@@ -1,9 +1,10 @@
-#include <kernel/arch.h>
+#include <kernel/arch/misc.h>
+#include <kernel/arch/seriallog.h>
 #include <vendor/printf.h>
 
 #define COM1 0x3F8
 
-void arch_serial_init(void) {
+void arch_serial_log_init(void) {
 	/* Enable DLAB (Divisor Latch Access Bit) */
 	arch_outportb(COM1 + 3, 0x80);
 
@@ -26,10 +27,6 @@ void arch_serial_init(void) {
 	arch_outportb(COM1 + 1, 0x01);
 }
 
-static inline void arch_serial_out_char(uint8_t ch) {
+void arch_serial_out_char(uint8_t ch) {
 	arch_outportb(COM1, ch);
-}
-
-void _putchar(char ch) {
-	arch_serial_out_char(ch);
 }

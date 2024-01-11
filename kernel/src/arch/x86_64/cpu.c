@@ -1,4 +1,4 @@
-#include <kernel/arch.h>
+#include <kernel/arch/misc.h>
 
 void arch_hang(void) {
 	asm ("1: hlt; jmp 1");

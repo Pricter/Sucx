@@ -2,8 +2,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <limine.h>
-#include <kernel/requests.h>
-#include <kernel/arch.h>
+#include <kernel/kprintf.h>
 
 LIMINE_BASE_REVISION(1)
 
@@ -12,7 +11,8 @@ void _start(void) {
         arch_hang();
     }
 
-	arch_init();
+	printf_init();
+	kprintf("This build has been compiled on %s at %s\n", __DATE__, __TIME__);
 
     arch_hang();
 }

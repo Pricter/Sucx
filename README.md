@@ -4,7 +4,7 @@ This project is named after its defining quality. I aim to turn this into atleas
 
 ## How to use this?
 
-Clone the project using the submodules as they are used for various parts of the kernel
+Clone the project using the submodules as other repositories used for various parts of the kernel
 
 ### Dependencies
 
@@ -27,6 +27,8 @@ Running `make run-hdd` will build the kernel and a raw HDD image (equivalent to 
 The `run-uefi` and `run-hdd-uefi` targets are equivalent to their non `-uefi` counterparts except that they boot `qemu` using a UEFI-compatible firmware.
 
 ## TODO
+- [ ] Spinlocks
+- [ ] Logging
 - [ ] Memory management
 - [ ] PIT Timer
 - [ ] Undefined Behaviour Sanitizer
