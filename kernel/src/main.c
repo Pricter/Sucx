@@ -6,6 +6,8 @@
 
 LIMINE_BASE_REVISION(1)
 
+extern void arch_init(void);
+
 void _start(void) {
     if (LIMINE_BASE_REVISION_SUPPORTED == false) {
         arch_hang();
@@ -13,6 +15,8 @@ void _start(void) {
 
 	printf_init();
 	kprintf("This build has been compiled on %s at %s\n", __DATE__, __TIME__);
+
+	arch_init();
 
     arch_hang();
 }
